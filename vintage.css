@@ -1,0 +1,232 @@
+/* ==========================================================================
+   Name: Theme-Vintage
+   Version: 1.0
+   Palette: Vintage (#86B0BD, #D1D3D4, #FFF0DD, #E2A16F)
+   Description: Retro Stationery Style (Cream Paper, Muted Teal, Serif Headings)
+   ========================================================================== */
+
+/* 1. RESET & FONTS */
+* {
+    border-radius: 2px !important; /* Slightly squared, classic print look */
+}
+
+/* Headings: Serif for that "Newspaper/Editorial" vibe */
+h1, h2, h3, h4, h5, h6, .card-title, .section-header {
+    font-family: "Georgia", "Times New Roman", Times, serif !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Body Text: Clean Sans-Serif for UI legibility */
+body, p, span, div, a, li, td, th, label, 
+input, textarea, select, button, .form-control {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+/* Fix Icons */
+i, .fa, .fas, .far, .fab, .glyphicon, .la, .las {
+    font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", "LineAwesome", FontAwesome, sans-serif !important;
+    font-weight: 900 !important;
+}
+
+:root {
+    /* VINTAGE PALETTE */
+    --vin-teal:   #86B0BD;       /* Sidebar / Primary */
+    --vin-gray:   #D1D3D4;       /* Borders / Inactive */
+    --vin-cream:  #FFF0DD;       /* Main Background (Paper) */
+    --vin-orange: #E2A16F;       /* Accents / Buttons */
+    
+    /* Generated Contrasts */
+    --vin-text:   #4A4A4A;       /* Dark Charcoal (Softer than black) */
+    --vin-dark-bg:#2F3E46;       /* Dark Mode Background */
+    --vin-card:   #FFFFFF;       /* White Cards on Cream BG */
+
+    /* CYBERPANEL MAPPINGS */
+    --vj-main: var(--vin-teal);
+    --vj-light: var(--vin-orange);
+    --vj-grad: linear-gradient(135deg, #E2A16F 0%, #d68e5a 100%);
+
+    /* Normal Mode */
+    --bg-primary: var(--vin-cream) !important;
+    --bg-secondary: var(--vin-card) !important;
+    --bg-sidebar: var(--vin-teal) !important;
+    --bg-sidebar-item: var(--vin-teal) !important;
+    --bg-hover: rgba(255, 255, 255, 0.15) !important;
+
+    --text-primary: var(--vin-text) !important;
+    --text-secondary: #7a7a7a !important;
+    --text-heading: #2c2c2c !important;
+
+    --accent-color: var(--vin-orange) !important;
+    --accent-hover: #d68e5a !important;
+    --border-color: var(--vin-gray) !important;
+    --shadow-color: rgba(134, 176, 189, 0.2) !important; /* Teal tinted shadow */
+    --ai-banner-bg: var(--vin-orange) !important;
+    --text-inverse: #ffffff !important;
+}
+
+/* ==========================================================================
+   2. SIDEBAR (Muted Teal)
+   ========================================================================== */
+#sidebar .menu-item.active {
+    background: #759aa6 !important; /* Slightly darker teal */
+    border-left: 4px solid var(--vin-cream) !important; /* Cream accent */
+    box-shadow: none !important;
+}
+
+#sidebar .menu-item.active i,
+#sidebar .menu-item.active span {
+    color: var(--vin-cream) !important;
+    font-weight: bold !important;
+    font-family: "Georgia", serif !important; /* Vintage flair on active item */
+}
+
+#sidebar .menu-item i {
+    color: #e3f2f5 !important; /* Very light teal/white */
+}
+
+/* Sidebar Section Headers */
+#sidebar .section-header {
+    background: #759aa6 !important;
+    color: var(--vin-cream) !important;
+    font-family: "Georgia", serif !important;
+    font-style: italic !important;
+    font-size: 12px !important;
+}
+
+/* ==========================================================================
+   3. DASHBOARD CARDS (Paper Style)
+   ========================================================================== */
+
+/* Cards - White paper on Cream background */
+.stat-card,
+.overview-section,
+.insights-section,
+.activity-section,
+.card {
+    background: #FFFFFF !important;
+    border: 1px solid var(--vin-gray) !important;
+    box-shadow: 4px 4px 0px rgba(209, 211, 212, 0.5) !important; /* Retro offset shadow */
+    margin-bottom: 20px !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, .card-title {
+    color: var(--vin-text) !important;
+    font-weight: bold !important;
+}
+
+/* Inputs - Classic Bordered */
+.form-control, input, select, textarea {
+    background: #FFFFFF !important;
+    border: 2px solid var(--vin-gray) !important; /* Thicker borders */
+    color: var(--vin-text) !important;
+    height: 42px !important;
+}
+
+.form-control:focus {
+    border-color: var(--vin-orange) !important;
+    box-shadow: none !important;
+    background: #fffdf9 !important; /* Warm white on focus */
+}
+
+/* ==========================================================================
+   4. BUTTONS & UI ELEMENTS
+   ========================================================================== */
+
+/* Primary Buttons (Orange/Terracotta) */
+.btn-primary, .btn-success {
+    background: var(--vin-orange) !important;
+    border: 2px solid var(--vin-orange) !important;
+    color: white !important;
+    font-family: "Georgia", serif !important;
+    font-weight: bold !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.1) !important;
+}
+
+.btn-primary:hover, .btn-success:hover {
+    background: #d68e5a !important;
+    border-color: #d68e5a !important;
+    transform: translateY(-1px);
+}
+
+/* Progress Bars */
+.progress-bar {
+    background: var(--vin-orange) !important;
+}
+
+/* Insight Icons - Circular with Border */
+.insight-icon {
+    background: var(--vin-cream) !important;
+    color: var(--vin-orange) !important;
+    border: 2px solid var(--vin-orange) !important;
+    border-radius: 50% !important;
+}
+
+.insight-value {
+    color: var(--vin-text) !important;
+}
+
+/* ==========================================================================
+   5. LOGIN PAGE
+   ========================================================================== */
+
+/* Left Panel - Teal */
+.col-login-left {
+    background: var(--vin-teal) !important;
+    border-right: 10px solid var(--vin-cream) !important; /* Cream separation */
+}
+.col-login-left::after { display: none !important; }
+
+/* Right Panel - Cream */
+.col-login-right {
+    background: var(--vin-cream) !important;
+}
+
+/* Login Inputs */
+.col-login-right input.form-control {
+    background: #FFFFFF !important;
+    border: 2px solid var(--vin-gray) !important;
+}
+
+/* Login Button */
+button.btn.btn-login {
+    background: var(--vin-orange) !important;
+    color: white !important;
+    font-family: "Georgia", serif !important;
+}
+
+/* ==========================================================================
+   6. DARK MODE (Sepia / Dark Slate)
+   ========================================================================== */
+[data-theme="dark"] {
+    --bg-primary: #2F3E46 !important;   /* Dark Slate */
+    --bg-secondary: #3b4d56 !important; /* Lighter Slate */
+    --text-primary: #FFF0DD !important; /* Cream Text */
+    --text-secondary: #D1D3D4 !important; /* Gray Text */
+    --border-color: #526670 !important;
+    
+    /* Dark Mode Cards */
+    .stat-card, .card, .overview-section {
+        background: #3b4d56 !important;
+        border: 1px solid #526670 !important;
+        box-shadow: none !important;
+    }
+
+    /* Dark Mode Inputs */
+    .form-control, input, select, textarea {
+        background: #2F3E46 !important;
+        border: 1px solid #526670 !important;
+        color: #FFF0DD !important;
+    }
+    
+    .form-control:focus {
+        border-color: var(--vin-orange) !important;
+    }
+
+    /* Sidebar in Dark Mode */
+    #sidebar .menu-item.active {
+        background: var(--vin-orange) !important;
+        border-left: none !important;
+    }
+}
