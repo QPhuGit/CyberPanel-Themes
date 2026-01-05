@@ -1,0 +1,219 @@
+/* ==========================================================================
+   Name: DirectAdmin-Evo
+   Version: 1.0
+   Description: DirectAdmin Evolution Style (Teal Accents, Slate Sidebar)
+   ========================================================================== */
+
+/* 1. RESET & FONTS */
+* {
+    border-radius: 3px !important; /* DirectAdmin uses slightly tighter corners */
+}
+
+/* Evolution Skin uses Roboto/Standard Fonts */
+body, h1, h2, h3, h4, h5, h6, 
+p, span, div, a, li, td, th, label, 
+input, textarea, select, button, .form-control {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    letter-spacing: 0.2px !important;
+}
+
+/* Ensure Icons work (Fix from Dev Mode) */
+i, .fa, .fas, .far, .fab, .glyphicon, .la, .las {
+    font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", "LineAwesome", FontAwesome, sans-serif !important;
+    font-weight: 900 !important;
+}
+
+:root {
+    /* DIRECTADMIN PALETTE */
+    --da-teal:   #00B29E;       /* The Signature Teal */
+    --da-slate:  #263238;       /* Sidebar Background */
+    --da-bg:     #F4F6F9;       /* Main Background (Light Grey) */
+    --da-card:   #FFFFFF;       /* White Cards */
+    --da-border: #E0E0E0;       /* Light Borders */
+    --da-text:   #455a64;       /* Slate Grey Text */
+    --da-dark-bg:#1e272e;       /* Dark Mode Background */
+
+    /* CYBERPANEL MAPPINGS */
+    --vj-main: var(--da-slate);
+    --vj-light: var(--da-teal);
+    --vj-grad: linear-gradient(135deg, #00B29E 0%, #009688 100%);
+
+    /* Normal Mode */
+    --bg-primary: var(--da-bg) !important;
+    --bg-secondary: var(--da-card) !important;
+    --bg-sidebar: var(--da-slate) !important;
+    --bg-sidebar-item: var(--da-slate) !important;
+    --bg-hover: rgba(255, 255, 255, 0.08) !important;
+
+    --text-primary: var(--da-text) !important;
+    --text-secondary: #78909c !important;
+    --text-heading: #263238 !important;
+
+    --accent-color: var(--da-teal) !important;
+    --accent-hover: #00897b !important;
+    --border-color: var(--da-border) !important;
+    --shadow-color: rgba(0, 0, 0, 0.06) !important;
+    --ai-banner-bg: var(--da-teal) !important;
+    --text-inverse: #ffffff !important;
+}
+
+/* ==========================================================================
+   2. SIDEBAR (Evolution Sidebar Mode)
+   ========================================================================== */
+#sidebar .menu-item.active {
+    background: rgba(0, 178, 158, 0.15) !important; /* Semi-transparent Teal */
+    border-left: 4px solid var(--da-teal) !important;
+    box-shadow: none !important;
+}
+
+#sidebar .menu-item.active i,
+#sidebar .menu-item.active span {
+    color: var(--da-teal) !important; /* Active Text becomes Teal */
+    font-weight: 500 !important;
+}
+
+#sidebar .menu-item i {
+    color: #b0bec5 !important; /* Muted Slate Icons */
+}
+
+/* Section Headers */
+#sidebar .section-header {
+    background: #212c31 !important;
+    color: #78909c !important;
+    font-size: 11px !important;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   3. DASHBOARD CARDS (Material Lite)
+   ========================================================================== */
+
+/* Cards - clean, minimal shadow */
+.stat-card,
+.overview-section,
+.insights-section,
+.activity-section,
+.card {
+    background: var(--da-card) !important;
+    border: 1px solid var(--da-border) !important;
+    border-top: 2px solid transparent !important; /* Minimal top border */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04) !important;
+    margin-bottom: 20px !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, .card-title {
+    color: var(--text-heading) !important;
+    font-weight: 500 !important;
+}
+
+/* Inputs - Flat material style */
+.form-control, input, select, textarea {
+    background: #ffffff !important;
+    border: 1px solid #cfd8dc !important;
+    color: var(--da-text) !important;
+    height: 42px !important;
+    padding-left: 12px !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.form-control:focus {
+    border-color: var(--da-teal) !important;
+    box-shadow: 0 0 0 2px rgba(0, 178, 158, 0.2) !important;
+}
+
+/* ==========================================================================
+   4. BUTTONS & UI ELEMENTS
+   ========================================================================== */
+
+/* Primary Buttons (Teal) */
+.btn-primary, .btn-success {
+    background: var(--da-teal) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    font-size: 13px !important;
+    letter-spacing: 0.5px !important;
+    padding: 10px 20px !important;
+    box-shadow: 0 2px 5px rgba(0, 178, 158, 0.4) !important;
+}
+
+.btn-primary:hover, .btn-success:hover {
+    background: #009688 !important;
+    box-shadow: 0 4px 8px rgba(0, 178, 158, 0.5) !important;
+    transform: translateY(-1px);
+}
+
+/* Progress Bars */
+.progress-bar {
+    background: var(--da-teal) !important;
+}
+
+/* Insight Icons - Simple Colored Squares */
+.insight-icon {
+    background: var(--da-teal) !important;
+    color: white !important;
+    border-radius: 4px !important;
+}
+
+.insight-value {
+    color: var(--da-text) !important;
+}
+
+/* ==========================================================================
+   5. LOGIN PAGE
+   ========================================================================== */
+
+/* Left Panel - Slate */
+.col-login-left {
+    background: var(--da-slate) !important;
+}
+.col-login-left::after { display: none !important; }
+
+/* Right Panel - White */
+.col-login-right {
+    background: #ffffff !important;
+}
+
+/* Changelog Card in Login */
+.col-login-left .login-changelogs .card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+/* Login Button */
+button.btn.btn-login {
+    background: var(--da-teal) !important;
+    color: white !important;
+    border-radius: 3px !important;
+}
+
+/* ==========================================================================
+   6. DARK MODE OVERRIDES (Evolution Dark)
+   ========================================================================== */
+[data-theme="dark"] {
+    --bg-primary: #1e272e !important;  /* Dark Slate BG */
+    --bg-secondary: #263238 !important; /* Sidebar color as Card BG */
+    --text-primary: #eceff1 !important;
+    --text-secondary: #b0bec5 !important;
+    --border-color: #37474f !important;
+    
+    /* Dark Mode Cards */
+    .stat-card, .card, .overview-section {
+        background: #263238 !important;
+        border: 1px solid #37474f !important;
+    }
+
+    /* Dark Mode Inputs */
+    .form-control, input, select, textarea {
+        background: #1e272e !important;
+        border: 1px solid #37474f !important;
+        color: #eceff1 !important;
+    }
+    
+    .form-control:focus {
+        border-color: var(--da-teal) !important;
+    }
+}
