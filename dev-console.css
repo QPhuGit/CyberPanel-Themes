@@ -1,0 +1,270 @@
+/* ==========================================================================
+   Name: Dev-Console
+   Version: 2.1 (Fixed Icons)
+   Description: Developer/Terminal Style (Monospace, Flat, High Contrast)
+   ========================================================================== */
+
+/* 0. GLOBAL DEVELOPER OVERRIDES */
+
+/* Apply Sharp Edges to EVERYTHING */
+* {
+    border-radius: 0px !important;
+}
+
+/* Apply Developer Font to TEXT elements only (Avoiding icons) */
+body, h1, h2, h3, h4, h5, h6, 
+p, span, div, a, li, td, th, label, blockquote,
+input, textarea, select, button, .form-control {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace !important;
+    letter-spacing: -0.5px !important;
+}
+
+/* EXPLICITLY FIX ICONS: Ensure they use their original font family */
+i, .fa, .fas, .far, .fab, .glyphicon, .la, .las {
+    font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", "LineAwesome", FontAwesome, sans-serif !important;
+    font-weight: 900 !important; /* Ensure solid icons render correctly */
+    letter-spacing: normal !important; /* Fix squished icons */
+}
+
+:root {
+    /* 1. BRAND COLORS (TERMINAL PALETTE) */
+    --dev-bg-dark: #0d1117;     /* GitHub/Terminal Dark */
+    --dev-bg-panel: #161b22;    /* Panel Background */
+    --dev-border: #30363d;      /* Subtle Borders */
+    --dev-accent: #58a6ff;      /* Dev Blue */
+    --dev-text-main: #c9d1d9;   /* Soft White */
+    --dev-text-dim: #8b949e;    /* Comments Gray */
+
+    /* 2. VARIABLE MAPPING */
+    --vj-main: var(--dev-bg-panel);
+    --vj-light: #21262d;
+    --vj-grad: #161b22; 
+
+    /* NORMAL MODE MAPPING */
+    --bg-primary: var(--dev-bg-dark) !important;
+    --bg-secondary: var(--dev-bg-panel) !important;
+    --bg-sidebar: #010409 !important;
+    --bg-sidebar-item: #0d1117 !important;
+    --bg-hover: #21262d !important;
+
+    /* Text Visibility */
+    --text-primary: var(--dev-text-main) !important;
+    --text-secondary: var(--dev-text-dim) !important;
+    --text-heading: #ffffff !important;
+
+    /* Accents & Borders */
+    --accent-color: var(--dev-accent) !important;
+    --accent-hover: #ffffff !important;
+    --border-color: var(--dev-border) !important;
+    --shadow-color: rgba(0, 0, 0, 0) !important; 
+    --ai-banner-bg: #1f6feb !important;
+    --active-shadow: rgba(0,0,0,0) !important;
+    --text-inverse: #ffffff !important;
+}
+
+/* Remove Shadows on Active Elements for Flat Look */
+#sidebar .menu-item.active {
+    box-shadow: none !important;
+    border-left: 3px solid var(--dev-accent) !important;
+    background: #21262d !important;
+}
+
+/* ==========================================================================
+   3. DARK MODE SPECIFICS
+   ========================================================================== */
+[data-theme="dark"] {
+    --vj-dark-bg: #0d1117;
+    --vj-card-bg: #161b22;
+    --vj-accent: var(--dev-accent);
+    --vj-text: #c9d1d9;
+    --vj-border: #30363d;
+}
+
+/* ==========================================================================
+   4. TEXT & UI ELEMENTS
+   ========================================================================== */
+
+/* Headings look like code comments or strict headers */
+h1, h2, h3, h4, h5, h6, .card-title {
+    color: var(--text-heading) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 0.9em !important; 
+}
+
+/* Inputs: The Terminal Command Line Look */
+.form-control,
+input,
+select,
+textarea {
+    background-color: #010409 !important;
+    color: #3fb950 !important; /* Matrix/Terminal Green Text */
+    border: 1px solid var(--dev-border) !important;
+    font-weight: bold !important;
+}
+
+.form-control:focus,
+input:focus {
+    background-color: #0d1117 !important;
+    border-color: var(--dev-accent) !important;
+    box-shadow: none !important;
+}
+
+/* Modals: Flat and Bordered */
+.modal-content {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--dev-text-dim) !important;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8) !important; 
+}
+
+/* ==========================================================================
+   4. LOGIN PAGE - CONSOLE STYLE
+   ========================================================================== */
+
+/* Left Panel - Remove Art, Make it Info Panel */
+.col-login-left {
+    background: #010409 !important;
+    border-right: 1px solid var(--dev-border) !important;
+}
+
+/* Remove the circle art */
+.col-login-left::after {
+    display: none !important; 
+}
+
+/* Changelog Card - Looks like a README.md block */
+.col-login-left .login-changelogs .card {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: 1px dashed var(--dev-border) !important;
+    padding: 15px !important;
+}
+
+.col-login-left .card-title::before {
+    content: "> "; 
+    color: var(--dev-accent);
+}
+
+/* Right Panel */
+.col-login-right {
+    background: var(--bg-primary) !important;
+}
+
+/* Form Groups */
+.form-group .input-group input.form-control {
+    background-color: #0d1117 !important;
+    border: 1px solid var(--dev-border) !important;
+    color: var(--text-primary) !important;
+    height: 45px !important;
+}
+
+.form-group .input-group input.form-control::placeholder {
+    color: #484f58 !important;
+    font-style: italic;
+}
+
+.input-group-addon.bg-blue {
+    background-color: #21262d !important;
+    border: 1px solid var(--dev-border) !important;
+    border-right: none !important;
+    color: var(--dev-accent) !important;
+}
+
+/* Sign-In Button - Outline Style */
+button.btn.btn-login,
+button.btn-success.btn-login {
+    background: transparent !important;
+    border: 1px solid var(--dev-accent) !important;
+    color: var(--dev-accent) !important;
+    text-transform: uppercase;
+    font-weight: bold !important;
+    transition: all 0.1s ease !important;
+    height: 45px !important;
+}
+
+button.btn.btn-login:hover {
+    background: var(--dev-accent) !important;
+    color: #000000 !important; 
+    transform: none !important; 
+    box-shadow: none !important;
+}
+
+/* ==========================================================================
+   5. DASHBOARD UI STYLES
+   ========================================================================== */
+
+/* Header - Minimalist */
+#header {
+    border-bottom: 1px solid var(--dev-border) !important;
+    background: #010409 !important;
+}
+
+/* Sidebar */
+#sidebar .section-header {
+    background: #010409 !important;
+    color: var(--dev-text-dim) !important;
+    font-size: 11px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px !important;
+    border-bottom: 1px solid #21262d;
+}
+
+#sidebar .menu-item i {
+    color: var(--dev-text-dim) !important;
+}
+
+[data-theme="dark"] #sidebar .menu-item.active {
+    background: #21262d !important;
+    border-right: none !important;
+}
+
+[data-theme="dark"] #sidebar .menu-item.active i {
+    color: var(--dev-accent) !important;
+}
+
+/* Cards - The "Panel" Look */
+.stat-card,
+.overview-section,
+.insights-section,
+.activity-section {
+    border: 1px solid var(--dev-border) !important;
+    background: var(--dev-bg-panel) !important;
+    box-shadow: none !important;
+}
+
+/* Progress Bars - Flat blocks */
+.progress-bar {
+    background: var(--dev-accent) !important;
+}
+
+/* Insight Icons - Square & Outlined */
+.insight-icon {
+    background: transparent !important;
+    border: 1px solid var(--dev-border);
+    color: var(--dev-accent) !important;
+}
+
+.insight-value {
+    font-size: 1.5rem !important;
+    color: var(--text-primary) !important;
+}
+
+/* Tabs */
+.activity-tab.active,
+.activity-tab.active:hover {
+    background: transparent !important;
+    color: var(--dev-accent) !important;
+    border-bottom: 2px solid var(--dev-accent) !important;
+    box-shadow: none !important;
+}
+
+.activity-tab:not(.active) {
+    border-bottom: 1px solid var(--dev-border);
+}
+
+/* Code Blocks / Logs if visible */
+pre, code {
+    background: #000000 !important;
+    border: 1px solid #30363d;
+    color: #79c0ff;
+}
